@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
-}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Akshar', sans-serif; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  header {
+    font-family: 'Montserrat', sans-serif;
+    background-color: black; }
+    header .logo {
+      display: inline-block; }
+      header .logo img {
+        width: 80px;
+        height: 80px;
+        margin: 10px; }
+      header .logo .letraLogo {
+        font-size: 25px;
+        font-family: 'Joan', serif; }
+    header nav #colorPiel {
+      color: #ffd5b7; }
+    header nav #fondoPiel {
+      background-color: #ffd5b7; }
+    header nav .navbar-nav li {
+      padding-left: 30px;
+      padding-right: 30px; }
+      header nav .navbar-nav li:hover {
+        border-bottom: 3px solid white ;
+        padding-bottom: 3px;
+        padding: 0px 30px;
+        background-color: #2c2a2a;
+        color: white;
+        border-radius: 2px;
+        transition: all 0.4s ease; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
