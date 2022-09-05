@@ -29,5 +29,39 @@
         background-color: #2c2a2a;
         color: white;
         border-radius: 2px;
-        transition: all 0.4s ease; }
+        transition: all 0.2s ease; }
+
+.cartIcon{
+  color: white;
+  font-size: 1.7em;
+
+}
+
+.badge{
+  color: white;
+  background-color: blue;
+  font-size: 1em;
+
+  left: 55%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+
+}
+
+.a .badge {
+  position: relative;
+  top: -30px;
+}
+
+.a{
+  padding-right: 2em;
+  padding-top: 0.2em;
+  padding-bottom: 0em;
+}
 
