@@ -20,6 +20,7 @@
     header nav #fondoPiel {
       background-color: #ffd5b7; }
     header nav .navbar-nav li {
+      margin-right: 30px;
       padding-left: 30px;
       padding-right: 30px; }
       header nav .navbar-nav li:hover {
@@ -31,7 +32,7 @@
         border-radius: 2px;
         transition: all 0.2s ease; }
 
-.cartIcon{
+.cartIcon a{
   color: white;
   font-size: 1.7em;
 
@@ -40,7 +41,6 @@
 .badge{
   color: white;
   background-color: blue;
-  font-size: 1em;
 
   left: 55%;
   width: 15px;

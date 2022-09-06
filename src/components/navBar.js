@@ -29,7 +29,7 @@ function Nav() {
                       </li>
                     </ul>
                     {/*<button class="btn btn-outline-success me-2" type="button" id="botonCarrito"><IconCart/><span class="badge badge-pill badge-primary">4</span></button>*/}
-                    <a className="a nav-link active" aria-current="page" href="#"><IconCart/><span className="badge badge-pill badge-primary">4</span></a>
+                    <IconCart/>
                   </div>
                 </div>
             </nav>
