@@ -2,7 +2,7 @@ import { useState } from "react"
 import { FiPlus, FiMinus } from "react-icons/fi";
 
 
-function ItemCount({stock,initial,onAdd}) {
+function ItemCount({stock,initial}) {
     const [cantidad, setCantidad] = useState(0) //hook
     
     const sumar = () =>{
