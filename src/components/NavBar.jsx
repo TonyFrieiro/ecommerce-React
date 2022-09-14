@@ -10,10 +10,10 @@ function Nav() {
                           <span className="navbar-brand mb-0 h1 letraLogo" id="colorPiel" >Euporie</span>
                         </div>
                       </nav>
-                  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                   </button>
-                  <div className="collapse navbar-collapse " id="navbarSupportedContent">
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0 ">
                       <li className="nav-item">
                         <a className="nav-link active" aria-current="page" href="#">Seccion 1</a>

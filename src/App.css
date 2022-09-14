@@ -50,8 +50,9 @@
   justify-content: center;
   align-items: center;
   color: white;
-
-
+}
+.bsCart:hover{
+  background-color: grey;
 }
 
 .a .badge {
@@ -89,7 +90,13 @@
   box-shadow: 4px 4px 10px rgb(197, 207, 211);
   transition: all 0.2s ease;
 }
-
+.agregarCarrito{
+  padding: 20px;
+}
+/* FONDO */
+.fondo{
+  background-color: rgba(235,235,235,255);
+}
 
 /*IMG CARDS*/
 
@@ -97,7 +104,11 @@
   width: 150px;
   height: 150px;
   padding: 5px;
-  margin: 3px;
+  margin-left: 60px;
+  border-bottom: solid 1px grey;
+}
+.card-body{
+  text-align: center;
 }
 .card{
   width: 17rem;
@@ -107,5 +118,53 @@
   margin-top: 2rem ;
 }
 .card:hover{
-  border: solid 1px grey;
+  box-shadow: 8px 8px 10px rgb(197, 207, 211);
+  transition: all 0.2s ease;
 }
+.titulo{
+  font-weight: 600;
+  font-size: larger;
+}
+.detalles{
+  background-color: white;
+  color: gray;
+  border-color: gray;
+  /* background-color: grey;
+  color: white;
+  border-color: white; */
+}
+.detalles:hover{
+  background-color: grey;
+  color: white;
+  border-color: white;
+  /* background-color: white;
+  color: gray;
+  border-color: gray; */
+}
+
+
+/* DESCRIPCION PRODUCTO PANTALLA*/
+ .productoDesc{
+  background-color: white;
+  margin: 50px;
+  padding: 20px;
+ 
+}
+
+.imgDescripcion{
+  margin: 0;
+  width:500px;
+  height: 500px;
+  display: inline-block;
+}
+.imgDescripcion img{
+  width: 100%;
+  height: 100%;
+}
+
+.textoDescripcion{
+  display: inline-block;
+  width: 400px;
+  margin-left: 150px;
+}
+
