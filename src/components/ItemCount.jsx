@@ -19,6 +19,7 @@ function ItemCount({stock,initial}) {
 
     const alertComprar = () => {
         alert(`Compro  ` + cantidad + `  Productos ` )
+        setCantidad(cantidad-cantidad)
     }
 
     return(

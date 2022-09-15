@@ -43,7 +43,7 @@ const Productos = [
             id: 6,
             name: "Tote Blanca",
             price: 2000,
-            stock: 5,
+            stock: 10,
             description: "Tote bag blanca ideal para llevar a todos lados y evitar el uso de bolsas de plástico! Son super resistentes para hacer las compras o para todas esas cosas que tenés que llevar y no entran en tu cartera o mochi de todos los días. También son grandes aliadas para las salidas al aire libre y la playa ",
             img: "https://res.cloudinary.com/dthbpblty/image/upload/v1663030153/toteBlanca_i2kuod.png"
         }
