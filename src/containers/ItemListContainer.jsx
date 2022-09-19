@@ -1,32 +1,32 @@
 import { useState,useEffect } from "react"
-import ItemCount from "../components/ItemCount"
 import ItemList from "../components/ItemList"
 import customFetch from "../utils/customFetch"
 //const {Productos} = require ("../utils/Productos")
 import Productos from "../utils/Productos"
+import {useParams} from "react-router-dom"
+import Item from "../components/Item"
 
-{console.log(Productos)}
-
-
-function ItemListContainer(props) {
+function ItemListContainer() {
     const [data,setData] = useState([])
+    const {id} = useParams()
 
     //cuando se monta el componente
     useEffect(()=>{
-        customFetch(2000,Productos)
+        if (id){
+            customFetch(2000,Productos.filter(item => item.categoryId == id))
             .then(result => setData(result))
             .catch(err => console.log(err))
-        //LLamada a la base de datos
-    })
+        }
+        else{
+            customFetch(2000,Productos)
+            .then(result => setData(result))
+            .catch(err => console.log(err))
+        }
+    },[id])
     
     return (
         <>
-            <h1>{props.greeting}</h1>
             <ItemList items ={data}></ItemList>
-            <ItemCount 
-                stock={5}
-                initial = {1}
-            />
         </>
     )
 

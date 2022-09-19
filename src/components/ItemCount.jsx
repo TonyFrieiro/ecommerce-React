@@ -3,7 +3,7 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 
 
 function ItemCount({stock,initial}) {
-    const [cantidad, setCantidad] = useState(0) //hook
+    const [cantidad, setCantidad] = useState(1) //hook
     
     const sumar = () =>{
         if (cantidad < stock){
@@ -19,7 +19,7 @@ function ItemCount({stock,initial}) {
 
     const alertComprar = () => {
         alert(`Compro  ` + cantidad + `  Productos ` )
-        setCantidad(cantidad-cantidad)
+        setCantidad(cantidad-cantidad + 1)
     }
 
     return(

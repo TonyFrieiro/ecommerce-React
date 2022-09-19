@@ -1,5 +1,6 @@
 
 import IconCart from "./CartWidget";
+import { Link } from "react-router-dom";
 function Nav() {
     return (
         <header className="header">
@@ -7,7 +8,7 @@ function Nav() {
                 <div className="container-fluid">
                     <nav className="navbar navbar-dark bg-dark">
                         <div className="container-fluid" id="colorPiel">
-                          <span className="navbar-brand mb-0 h1 letraLogo" id="colorPiel" >Euporie</span>
+                          <Link to ="/"className="navbar-brand"><img className="imagenIcono"src="https://res.cloudinary.com/dthbpblty/image/upload/v1663201182/icono-removebg-preview_szxwxy.png" alt="" /></Link>
                         </div>
                       </nav>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,16 +17,16 @@ function Nav() {
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0 ">
                       <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Seccion 1</a>
+                        <Link to ="/category/1" className="nav-link active" aria-current="page">ToteBags</Link>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Seccion 2</a>
+                        <Link to ="/category/2" className="nav-link active" aria-current="page">Buzos y Remeras</Link>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Seccion 3</a>
+                        <Link to ="/category/3" className="nav-link active" aria-current="page">Cartucheras</Link>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Seccion 4</a>
+                        <a className="nav-link active" aria-current="page" href="#">Otros</a>
                       </li>
                     </ul>
                     {/*<button class="btn btn-outline-success me-2" type="button" id="botonCarrito"><IconCart/><span class="badge badge-pill badge-primary">4</span></button>*/}
