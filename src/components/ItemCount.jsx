@@ -2,8 +2,8 @@ import { useState } from "react"
 import { FiPlus, FiMinus } from "react-icons/fi";
 
 
-function ItemCount({stock,initial}) {
-    const [cantidad, setCantidad] = useState(1) //hook
+function ItemCount({stock,initial,onAdd}) {
+    const [cantidad, setCantidad] = useState(initial) //hook
     
     const sumar = () =>{
         if (cantidad < stock){
@@ -18,8 +18,13 @@ function ItemCount({stock,initial}) {
     }
 
     const alertComprar = () => {
-        alert(`Compro  ` + cantidad + `  Productos ` )
-        setCantidad(cantidad-cantidad + 1)
+        if(cantidad > 0){
+            alert(`Compro  ` + cantidad + `  Productos ` )
+            setCantidad(cantidad-cantidad + 1)
+            onAdd(cantidad)}
+        else{
+            alert("la cantidad que ingreso no es valida")
+        }
     }
 
     return(
