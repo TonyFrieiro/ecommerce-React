@@ -33,8 +33,8 @@
 
 
 .imagenIcono{
-  width: 60px;
-  height: 40px;
+  width: 108px;
+  height: 37px;
   border-radius: 5px;
 }
 .cartIcon a{
@@ -138,6 +138,7 @@
 .titulo{
   font-weight: 600;
   font-size: larger;
+  font-family: 'Tiro Telugu', serif;
 }
 .detalles{
   background-color: white;
@@ -182,3 +183,33 @@
   margin-left: 150px;
 }
 
+/*CARRITO////*/
+
+.tituloCarrito{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.imgCart{
+  width: 150px;
+  height: 150px;
+}
+
+.listaCart {
+  margin-left: 30px;
+  padding: 10px;
+}
+
+.buttonClear{
+  background-color: rgb(114, 43, 43);
+  color: white;
+  margin: 10px;
+  padding: 3px;
+  border-radius: 3px;
+  border-color:rgb(114, 43, 43) ;
+}
+.buttonClear:hover{
+
+  padding: 6px;
+
+}

@@ -8,7 +8,7 @@ function Nav() {
                 <div className="container-fluid">
                     <nav className="navbar navbar-dark bg-dark">
                         <div className="container-fluid" id="colorPiel">
-                          <Link to ="/"className="navbar-brand"><img className="imagenIcono"src="https://res.cloudinary.com/dthbpblty/image/upload/v1663628148/icono-removebg-preview_szxwxy_bf4a4b.png" alt="" /></Link>
+                          <Link to ="/"className="navbar-brand"><img className="imagenIcono"src="https://res.cloudinary.com/dthbpblty/image/upload/c_scale,w_108/v1663805457/rgba_33_37_41_255_ehguos.png" alt="" /></Link>
                         </div>
                       </nav>
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="true" aria-label="Toggle navigation">
