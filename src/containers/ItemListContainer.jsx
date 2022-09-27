@@ -5,8 +5,12 @@ import customFetch from "../utils/customFetch"
 import Productos from "../utils/Productos"
 import {useParams} from "react-router-dom"
 import Item from "../components/Item"
+import Spinner from "../components/Spinner"
 
 function ItemListContainer() {
+
+    const [loading,setLoading] = useState(true)
+
     const [data,setData] = useState([])
     const {id} = useParams()
 
@@ -14,19 +18,24 @@ function ItemListContainer() {
     useEffect(()=>{
         if (id){
             customFetch(2000,Productos.filter(item => item.categoryId == id))
-            .then(result => setData(result))
+            .then(result => {
+                setData(result)
+                setLoading(false)})
             .catch(err => console.log(err))
         }
         else{
             customFetch(2000,Productos)
-            .then(result => setData(result))
+            .then(result => {
+                setData(result)
+                setLoading(false)})
             .catch(err => console.log(err))
         }
     },[id])
     
     return (
         <>
-            <ItemList items ={data}></ItemList>
+            {loading?<Spinner></Spinner>:<ItemList items ={data}></ItemList>}
+            
         </>
     )
 

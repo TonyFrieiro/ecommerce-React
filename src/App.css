@@ -213,3 +213,21 @@
   padding: 6px;
 
 }
+
+.vacio{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.terminarCompra{
+  display: flex;
+  justify-content: end;
+}
+
+/*SPINNER  */
+
+.contenedorSpinner{
+  margin-top: 10px;
+
+}

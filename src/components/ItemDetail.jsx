@@ -10,12 +10,19 @@ import { CartContext } from "./CartContext"
 const ItemDetail =({item}) => {
     const [itemCount,setItemCount] = useState(0)
     const {addItem} = useContext(CartContext)
+    const {largo} = useContext(CartContext)
+    const {total} = useContext(CartContext)
 
     const onAdd = (qty) => {
         setItemCount(qty)
         addItem(item,qty)
+        
     } 
 
+    const total2 = (item) =>{
+        total(item)
+    }
+ 
 
     return(
         <>

@@ -9,6 +9,24 @@ const CartContextProvider = ({children}) => {
 
     const removeItem = (id) => setCartList(cartList.filter((product)=>product.id !== id))
 
+    const clear =() =>{
+        setCartList([])
+    }
+
+    const largo = (product,qty) =>{
+        const largo = largo + product.qty
+    }
+    const [totalCompra,setTotalCompra] = useState(0)
+    const total = (item) =>{
+        setTotalCompra(totalCompra + item.price)
+
+    }
+
+    const finalizo =() =>{
+        alert("finalizo la compra")
+        clear()
+
+    }
 
     const addItem = (product, qty) =>{
         if (isInCart(product.id) == true){
@@ -31,12 +49,9 @@ const CartContextProvider = ({children}) => {
         
     }
 
-    const clear =() =>{
-        setCartList([])
-    }
 
     return(
-        <CartContext.Provider value = {{cartList,addItem,clear,isInCart,removeItem}}>
+        <CartContext.Provider value = {{cartList,addItem,clear,isInCart,removeItem,finalizo}}>
             {children}
         </CartContext.Provider>
     )
