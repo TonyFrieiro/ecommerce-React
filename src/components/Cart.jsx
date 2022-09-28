@@ -24,7 +24,7 @@ const Cart = () =>{
                 {/* {noHayNada()} */}
                 <button onClick={clear} className="buttonClear">Borrar todo</button>
                 {
-                cartList.map(item => <li className="listaCart"><img src={item.img} className="imgCart"alt="" />{item.name} ______________Cantidad: {item.qty}<button onClick={()=>removeItem(item.id)} className="checkout">BORRAR ITEM</button></li>)
+                cartList.map(item => <li className="listaCart"><img src={item.img} className="imgCart"alt="" />{item.name} ______________Cantidad: {item.qty} precio: $ {item.price}<button onClick={()=>removeItem(item.id)} className="checkout">BORRAR ITEM</button></li>)
                 }
                 <div className="terminarCompra" >
                     <p>Total:  {totalCompra}</p>

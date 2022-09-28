@@ -18,7 +18,7 @@ const CartContextProvider = ({children}) => {
     }
     const [totalCompra,setTotalCompra] = useState(0)
     const total = (item) =>{
-        setTotalCompra(totalCompra + item.price)
+        setTotalCompra(...totalCompra , item.price)
 
     }
 
