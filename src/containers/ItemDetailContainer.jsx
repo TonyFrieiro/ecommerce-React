@@ -23,23 +23,14 @@ function ItemDetailContainer(props) {
         //     })
         //     .catch(err => console.log(err))
         // //LLamada a la base de datos
-        const fireStoreFetch = async() =>{
+        const fetch = async () => {
             const docRef = doc(db, "productos", id);
             const docSnap = await getDoc(docRef);
-
-            if (docSnap.exists()) {
-                console.log("Document data:", docSnap.data());
-                
-            } else {
-            // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-            const detailsFetch = docSnap.data()
-            return detailsFetch
+            setDetails(docSnap.data())
+            setLoading(false)
         }
-        fireStoreFetch()
-            .then(result => setDetails(result))
-    })
+        fetch()
+        }, [id]);
     
     return (
         <>
