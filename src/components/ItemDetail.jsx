@@ -10,7 +10,6 @@ import { CartContext } from "./CartContext"
 const ItemDetail =({item}) => {
     const [itemCount,setItemCount] = useState(0)
     const {addItem} = useContext(CartContext)
-    const {largo} = useContext(CartContext)
     const {total} = useContext(CartContext)
 
     const onAdd = (qty) => {
@@ -19,9 +18,9 @@ const ItemDetail =({item}) => {
         
     } 
 
-    const total2 = (item) =>{
-        total(item)
-    }
+
+
+    // total(item)
  
 
     return(
