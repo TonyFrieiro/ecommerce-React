@@ -8,10 +8,18 @@ export const CartContext = createContext()
 const CartContextProvider =  ({children}) => {
     const [cartList, setCartList] = useState([])
     const [contador,setContador] = useState(0)
+    const [cantidad2,setCantidad2]  = useState(0)
 
     const contadorFunc =(item) =>{
         setContador(item.price*item.qty)
+
     }
+    const funcCantidad =(qty)=>{
+        let a = cantidad2 + qty
+        setCantidad2(a) 
+        console.log(cantidad2)                
+    }
+
     const isInCart =(id)=> cartList.find(product => product.id === parseInt(id))?true:false
 
     const removeItem = (id) => setCartList(cartList.filter((product)=>product.id !== id))
@@ -19,25 +27,26 @@ const CartContextProvider =  ({children}) => {
     const totalPrecio =() =>{
         return cartList.reduce((price,item)=>price +item.qty * item.price,0)
     }
+    const cantItem = () => cartList.reduce((contador,producto)=> contador + producto.qty,0)
 
     const clear =() =>{
         setCartList([])
     }
 
-    const largo = (product,qty) =>{
-        const largo = largo + product.qty
-    }
     const [totalCompra,setTotalCompra] = useState(0)
     // const total = (item) =>{
     //     setTotalCompra(...totalCompra , item.price)
 
     // }
+    const funcTotal =() =>{
+        setTotalCompra(totalCompra + contadorFunc)
+    }
     
 
     const finalizo = async() =>{
         
         let itemsForDB = cartList.map(item=>({
-            // id:item.id,
+            id:item.id,
             price:item.price,
             title:item.name,
             quantity: item.qty
@@ -50,7 +59,7 @@ const CartContextProvider =  ({children}) => {
             },
             date:serverTimestamp(),
             items:itemsForDB,
-            total:contador
+            total:totalPrecio()
         }
 
         const newOrderRef = doc(collection(db, "orders"))
@@ -71,7 +80,9 @@ const CartContextProvider =  ({children}) => {
     const addItem = (product, qty) =>{
         if (isInCart(product.id) == true){
             alert("se agreagron mas productos a su compra")
-            product.qty = product.qty + qty
+            setCartList(cartList.map(product =>{
+                return product.id === product.id ? {...product,qty: product.qty+qty}:product
+            }))
         }else{
         Object.defineProperty(product, 'qty', {
             value: qty,
@@ -91,7 +102,7 @@ const CartContextProvider =  ({children}) => {
 
 
     return(
-        <CartContext.Provider value = {{cartList,addItem,clear,isInCart,removeItem,finalizo,totalCompra,totalPrecio,contador,contadorFunc}}>
+        <CartContext.Provider value = {{cartList,addItem,clear,isInCart,removeItem,finalizo,totalCompra,totalPrecio,cantItem,contador,contadorFunc,funcTotal,funcCantidad}}>
             {children}
         </CartContext.Provider>
     )
