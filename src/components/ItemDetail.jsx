@@ -10,8 +10,6 @@ import { CartContext } from "./CartContext"
 const ItemDetail =({item}) => {
     const [itemCount,setItemCount] = useState(0)
     const {addItem} = useContext(CartContext)
-    const {total} = useContext(CartContext)
-    const {cantidad2} = useContext(CartContext)
     const {funcCantidad} = useContext(CartContext)
 
     const onAdd = (qty) => {
@@ -20,15 +18,9 @@ const ItemDetail =({item}) => {
         funcCantidad (qty)
         
     } 
-    
-
-
-
-    // total(item)
- 
 
     return(
-        <>
+        <>  
             <div className="productoDesc">
                 <div className="imgDescripcion"><img src={item.img} alt="" /></div>
                 <div className="textoDescripcion">

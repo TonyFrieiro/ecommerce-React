@@ -1,21 +1,16 @@
-
 import IconCart from "./CartWidget";
 import { Link } from "react-router-dom";
-function Nav() {
+function Nav1() {
     return (
         <header className="header">
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
-                <div className="container-fluid">
-                    <nav className="navbar navbar-dark bg-dark">
-                        <div className="container-fluid" id="colorPiel">
-                          <Link to ="/"className="navbar-brand"><img className="imagenIcono"src="https://res.cloudinary.com/dthbpblty/image/upload/c_scale,w_108/v1663805457/rgba_33_37_41_255_ehguos.png" alt="" /></Link>
-                        </div>
-                      </nav>
-                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="true" aria-label="Toggle navigation">
+                <div className="container-fluid" >
+                  <Link to ="/"className="navbar-brand"><img className="imagenIcono"src="https://res.cloudinary.com/dthbpblty/image/upload/c_scale,w_108/v1663805457/rgba_33_37_41_255_ehguos.png" alt="" /></Link>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                   </button>
-                  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul className="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
                       <li className="nav-item">
                         <Link to ="/category/1" className="nav-link active" aria-current="page">ToteBags</Link>
                       </li>
@@ -35,8 +30,7 @@ function Nav() {
                 </div>
             </nav>
         </header>
-  
     );
   }
 
-export default Nav
+export default Nav1

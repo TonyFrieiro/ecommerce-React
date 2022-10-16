@@ -5,14 +5,12 @@ import {CartContext} from "./CartContext"
 
 function IconCart (){
     const {cartList} = useContext(CartContext)
-    const {addItem} = useContext(CartContext)
-    const {cantidad2} = useContext(CartContext)
     const {cantItem} = useContext(CartContext)
-    const largo = cartList.length
+
     return(
         
         <div className="cartIcon">
-            <Link to={"./Cart"} className="a nav-link active" aria-current="page" href="#"><BsCart/>{cartList.length === 0 ? "":<span className="badge badge-pill badge-primary">{cantItem()}</span>}</Link>
+            <Link to={"./Cart"} className="a nav-link active" aria-current="page" href="#"><BsCart/>{cartList.length === 0 ? "":<span className="badge badge-pill badge-primary" id="capsula">{cantItem()}</span>}</Link>
         </div>
     )
 }

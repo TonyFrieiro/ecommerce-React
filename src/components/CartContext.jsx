@@ -3,22 +3,17 @@ import {createContext} from "react"
 import {serverTimestamp, doc,setDoc,collection,increment,updateDoc} from "firebase/firestore"
 import {db} from "../utils/firebaseConfig"
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 export const CartContext = createContext()
 
 const CartContextProvider =  ({children}) => {
     const [cartList, setCartList] = useState([])
-    const [contador,setContador] = useState(0)
+
     const [cantidad2,setCantidad2]  = useState(0)
 
-    const contadorFunc =(item) =>{
-        setContador(item.price*item.qty)
 
-    }
-    const funcCantidad =(qty)=>{
-        let a = cantidad2 + qty
-        setCantidad2(a) 
-        console.log(cantidad2)                
-    }
 
     const isInCart =(id)=> cartList.find(product => product.id === parseInt(id))?true:false
 
@@ -33,15 +28,8 @@ const CartContextProvider =  ({children}) => {
         setCartList([])
     }
 
-    const [totalCompra,setTotalCompra] = useState(0)
-    // const total = (item) =>{
-    //     setTotalCompra(...totalCompra , item.price)
 
-    // }
-    const funcTotal =() =>{
-        setTotalCompra(totalCompra + contadorFunc)
-    }
-    
+    const MySwal = withReactContent(Swal)
 
     const finalizo = async() =>{
         
@@ -71,7 +59,10 @@ const CartContextProvider =  ({children}) => {
                 stock: increment(-item.qty)
             })
         })
-        alert("your order has been created,ID order is:  "+newOrderRef.id)
+        MySwal.fire({
+            icon: 'success',
+            title: <p>{`Orden creada, ID de la orden:  `+ newOrderRef.id +`` }</p>,
+          })
         clear()
         
 
@@ -102,7 +93,7 @@ const CartContextProvider =  ({children}) => {
 
 
     return(
-        <CartContext.Provider value = {{cartList,addItem,clear,isInCart,removeItem,finalizo,totalCompra,totalPrecio,cantItem,contador,contadorFunc,funcTotal,funcCantidad}}>
+        <CartContext.Provider value = {{cartList,addItem,clear,isInCart,removeItem,finalizo,totalPrecio,cantItem}}>
             {children}
         </CartContext.Provider>
     )

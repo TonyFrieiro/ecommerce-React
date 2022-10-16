@@ -1,9 +1,13 @@
 import { useState } from "react"
 import { FiPlus, FiMinus } from "react-icons/fi";
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function ItemCount({stock,initial,onAdd}) {
     const [cantidad, setCantidad] = useState(initial) //hook
+
+    const MySwal = withReactContent(Swal)
     
     const sumar = () =>{
         if (cantidad < stock){
@@ -19,11 +23,19 @@ function ItemCount({stock,initial,onAdd}) {
 
     const alertComprar = () => {
         if(cantidad > 0){
-            alert(`Compro  ` + cantidad + `  Productos ` )
+            MySwal.fire({
+                icon: 'success',
+                title: <p>{`` + cantidad + ` Producto/s añadidos al carrito` }</p>,
+
+              })
             setCantidad(cantidad-cantidad + 1)
             onAdd(cantidad)}
         else{
-            alert("la cantidad que ingreso no es valida")
+            MySwal.fire({
+                icon: 'error',
+                title: <p>{`La cantidad que ingreso no es valida` }</p>,
+
+              })
         }
     }
 

@@ -30,8 +30,17 @@
         color: white;
         border-radius: 2px;
         transition: all 0.3s ease; }
+  #navbarSupportedContent{
+    margin-left: 10%;
+  }
 
 
+.tituloProductos{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 40px;
+}
 .imagenIcono{
   width: 108px;
   height: 37px;
@@ -70,6 +79,10 @@
   padding-top: 0.2em;
   padding-bottom: 0em;
 }
+#capsula{
+  background-color: #615b55e8;
+}
+
 
 
 /*  ITEM COUNT (BOTONERA) */
@@ -109,7 +122,7 @@
 /* FONDO */
 .fondo{
   background-color: rgba(235,235,235,255);
-  padding-bottom: 30px;
+  padding-bottom: 70px;
 }
 
 /*IMG CARDS*/
@@ -163,6 +176,8 @@
   background-color: white;
   margin: 50px;
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
  
 }
 
@@ -180,7 +195,7 @@
 .textoDescripcion{
   display: inline-block;
   width: 400px;
-  margin-left: 150px;
+ 
 }
 
 /*CARRITO////*/
@@ -190,14 +205,29 @@
   padding-top: 20px;
 }
 
+.contenedorCarrito{
+  width: 100%;
+}
+
 .imgCart{
   width: 150px;
   height: 150px;
 }
 
 .listaCart {
+  display: flex;
+  flex-wrap: wrap;
   margin-left: 30px;
   padding: 10px;
+  border: #000 solid 1px;
+  border-radius: 10px;
+  justify-content:space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.carritoP{
+  margin-right: 20px;
 }
 
 .buttonClear{
@@ -222,7 +252,17 @@
 
 .terminarCompra{
   display: flex;
-  justify-content: end;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  margin: 30px;
+}
+.terminarCompra p{
+  margin-right: 60px;
+  font-size:x-large
 }
 
 /*SPINNER  */
@@ -231,3 +271,63 @@
   margin-top: 10px;
 
 }
+
+
+/* FOOTER */
+
+footer {
+  background-color: #bebdbce8; }
+  footer .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    background-color: #bebdbce8;
+    padding-top: 50px;
+    color: black;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    font-size: 20px; }
+    footer .footer div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap; }
+    footer .footer .contacto div img {
+      width: 50px;
+      height: 50px; }
+    footer .footer .footerProductos div a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: all 0.5s ease;
+      font-size: 20px; }
+  footer .contenedorPago {
+    font-size: 20px;
+    padding-left: 20px; }
+    footer .contenedorPago .mediosPago {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      footer .contenedorPago .mediosPago div {
+        padding: 20px;
+        margin: 10px; }
+        footer .contenedorPago .mediosPago div img {
+          width: 60px;
+          height: 40px; }
+    footer .contenedorPago .tituloPago {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding-top: 10px; }
+  footer .boxCopyright {
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
